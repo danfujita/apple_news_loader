@@ -3,7 +3,7 @@ import requests
 
 channel_id = 'random'
 apple_news_url = 'localhost'
-syndication_new_url = 'localhost'
+syndication_url = 'localhost'
 
 def loeader():
     r = requests.get(syndication_url)
