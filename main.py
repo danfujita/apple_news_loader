@@ -5,7 +5,7 @@ channel_id = 'random'
 apple_news_url = 'localhost'
 syndication_url = 'localhost'
 
-def loeader():
+def loader():
     r = requests.get(syndication_url)
     articles=r.json()
 
@@ -16,5 +16,5 @@ def loeader():
 
 if __name__ == '__main__':
     sched = BlockingScheduler(timezone='EST')
-    sched.add_job(loeader, 'interval', id='loeader',seconds=5)
+    sched.add_job(loader, 'interval', id='loeader',minutes=5)
     sched.start()
