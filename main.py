@@ -21,5 +21,5 @@ def loader():
 
 if __name__ == '__main__':
     sched = BlockingScheduler(timezone='EST')
-    sched.add_job(loader, 'interval', id='loeader',seconds=int(config['INTERVAL']['minutes']))
+    sched.add_job(loader, 'interval', id='loeader',minutes=int(config['INTERVAL']['minutes']))
     sched.start()
