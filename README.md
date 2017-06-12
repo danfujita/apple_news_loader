@@ -1,1 +1,2 @@
-# apple_news_loader
+# Apple News Loader
+Reads syndication feed and upload articiles to Apple News.
