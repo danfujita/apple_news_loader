@@ -40,7 +40,7 @@ def get_articles(links):
     for link in links:
         try:
            r=requests.get(link,headers=headers)
-           article = json.loads(r.text)
+           article = r.text
            articles.append(article)
         except:
             print(link)
