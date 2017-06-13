@@ -15,18 +15,13 @@ def convert(json_string):
     return json.dumps(article);
 
 def createComponents(data):
-    cs = [];
-    cs.append(titleComponent(data));
-    cs.append(introComponent(data));
-
-    header = headerComponent(data);
-    if header:
-        cs.append(header)
-
-    cs.append(bodyComponent(data));
-    cs.append(authorComponent(data));
-
-    return cs 
+    return [x for x in [
+        titleComponent(data)),
+        introComponent(data)),
+        headerComponent(data)),
+        bodyComponent(data)),
+        authorComponent(data)),
+    ] if x];
 
 # COMPONENTS
 
