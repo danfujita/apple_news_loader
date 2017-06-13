@@ -1,0 +1,97 @@
+{
+    "version": "1.5",
+    "language": "en",
+    "layout": {
+        "columns": 1,
+        "width": 1024
+    },
+    "documentStyle": {
+        "backgroundColor": "#f6f6f6"
+    },
+    "compntexstyles": {
+        "default-title": {
+            "fontName": "HelveticaNeue-Thin",
+            "fontSize": 36,
+            "textColor": "#2F2F2F",
+            "textAlignment": "center",
+            "lineHeight": 44
+        },
+        "default-subtitle": {
+            "fontName": "HelveticaNeue-Thin",
+            "fontSize": 20,
+            "textColor": "#2F2F2F",
+            "textAlignment": "center",
+            "lineHeight": 24
+        },
+        "titleStyle": {
+            "textAlignment": "left",
+            "fontName": "HelveticaNeue-Bold",
+            "fontSize": 64,
+            "lineHeight": 74,
+            "textColor": "#000"
+        },
+        "introStyle": {
+            "textAlignment": "left",
+            "fontName": "HelveticaNeue-Medium",
+            "fontSize": 24,
+            "textColor": "#000"
+        },
+        "authorStyle": {
+            "textAlignment": "left",
+            "fontName": "HelveticaNeue-Bold",
+            "fontSize": 16,
+            "textColor": "#000"
+        },
+        "bodyStyle": {
+            "textAlignment": "left",
+            "fontName": "Georgia",
+            "fontSize": 18,
+            "lineHeight": 26,
+            "textColor": "#000"
+        }
+    },
+    "componentLayouts": {
+        "headerImageLayout": {
+            "columnStart": 0,
+            "columnSpan": 7,
+            "ignoreDocumentMargin": true,
+            "minimumHeight": "40vh",
+            "margin": {
+                "top": 15,
+                "bottom": 15
+            }
+        },
+        "titleLayout": {
+            "columnStart": 0,
+            "columnSpan": 7,
+            "margin": {
+                "top": 50,
+                "bottom": 10
+            }
+        },
+        "introLayout": {
+            "columnStart": 0,
+            "columnSpan": 7,
+            "margin": {
+                "top": 15,
+                "bottom": 15
+            }
+        },
+        "authorLayout": {
+            "columnStart": 0,
+            "columnSpan": 7,
+            "margin": {
+                "top": 15,
+                "bottom": 15
+            }
+        },
+        "bodyLayout": {
+            "columnStart": 0,
+            "columnSpan": 5,
+            "margin": {
+                "top": 15,
+                "bottom": 15
+            }
+        }
+    }
+}
