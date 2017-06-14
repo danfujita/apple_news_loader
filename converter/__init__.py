@@ -6,7 +6,7 @@ with open('converter/base.json') as base_file:
     article_base = json.load(base_file)
 
 def convert(json_string):
-    data = json.load(json_string)
+    data = json.loads(json_string)
     article = copy.deepcopy(article_base)
     article['identifier'] = data['id']
     article['title'] = data['display_headline']
@@ -16,11 +16,11 @@ def convert(json_string):
 
 def createComponents(data):
     return [x for x in [
-        titleComponent(data)),
-        introComponent(data)),
-        headerComponent(data)),
-        bodyComponent(data)),
-        authorComponent(data)),
+        titleComponent(data),
+        introComponent(data),
+        headerComponent(data),
+        bodyComponent(data),
+        authorComponent(data),
     ] if x];
 
 # COMPONENTS
@@ -37,7 +37,7 @@ def introComponent(data):
     return {
       'role': 'intro',
       'layout': 'introLayout',
-      'text': data['deck'], 
+      'text': data['deck'],
       'textStyle': 'introStyle'
     }
 
