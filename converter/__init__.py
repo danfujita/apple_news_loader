@@ -9,10 +9,18 @@ def convert(json_string):
     data = json.loads(json_string)
     article = copy.deepcopy(article_base)
     article['identifier'] = data['id']
-    article['title'] = data['display_headline']
+    article['title'] = title(data)
     article['subtitle'] = data['deck']
     article['components'] = createComponents(data)
     return json.dumps(article);
+
+def title(data):
+    if 'display_headline' in data and data['display_headline'] != "":
+        return data['display_headline']
+    elif 'headline' in data and data['headline'] != "":
+        return data['headline']
+    else 'short_headline' in data and data['short_headline'] != "":
+        return data['short_headline']
 
 def createComponents(data):
     return [x for x in [
