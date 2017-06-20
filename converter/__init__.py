@@ -19,7 +19,7 @@ def title(data):
         return data['display_headline']
     elif 'headline' in data and data['headline'] != "":
         return data['headline']
-    else 'short_headline' in data and data['short_headline'] != "":
+    elif 'short_headline' in data and data['short_headline'] != "":
         return data['short_headline']
 
 def createComponents(data):
