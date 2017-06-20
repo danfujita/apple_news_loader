@@ -8,7 +8,7 @@
     "documentStyle": {
         "backgroundColor": "#f6f6f6"
     },
-    "componentStyles": {
+    "componentTextStyles": {
         "default-title": {
             "fontName": "HelveticaNeue-Thin",
             "fontSize": 36,
