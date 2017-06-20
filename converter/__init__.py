@@ -8,10 +8,13 @@ with open('converter/base.json') as base_file:
 def convert(json_string):
     data = json.loads(json_string)
     article = copy.deepcopy(article_base)
-    article['identifier'] = data['id']
-    article['title'] = title(data)
-    article['subtitle'] = data['deck']
-    article['components'] = createComponents(data)
+    try:
+        article['identifier'] = data['id']
+        article['title'] = title(data)
+        article['subtitle'] = data['deck']
+        article['components'] = createComponents(data)
+    except:
+        print('parse error')
     return json.dumps(article);
 
 def title(data):
@@ -19,7 +22,7 @@ def title(data):
         return data['display_headline']
     elif 'headline' in data and data['headline'] != "":
         return data['headline']
-    else 'short_headline' in data and data['short_headline'] != "":
+    elif 'short_headline' in data and data['short_headline'] != "":
         return data['short_headline']
 
 def createComponents(data):
@@ -37,7 +40,7 @@ def titleComponent(data):
     return {
       'role': 'title',
       'layout': 'titleLayout',
-      'text': data['id'],
+      'text': title(data),
       'textStyle': 'titleStyle',
     }
 
