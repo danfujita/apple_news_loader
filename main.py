@@ -4,6 +4,7 @@ import requests
 from rss.load_articles import load_articles
 from converter import convert
 import json
+import os 
 
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -14,15 +15,21 @@ def loader():
     syndication_url = config['URLS']['syndication_url']
     articles = load_articles(config['URLS']['syndication_url'],config['AUTH']['username'],config['AUTH']['password'])
     count = 0
+
     for article in articles:
         apple_news_article = convert(article)
-        path = 'articles/article'+str(count)+'.json'
+        path = 'articles/article'+str(count)+'/article.json'
         print(path)
-        apple_news_article= json.loads(apple_news_article)
-        with open(path, 'w+') as outfile:
-             json.dump(apple_news_article, outfile, indent=4)
-        count=count+1
-        '''
+        try:
+            apple_news_article= json.loads(apple_news_article)
+            os.makedirs('articles/article'+str(count),exist_ok=True)
+            with open(path, 'w+') as outfile:
+                 json.dump(apple_news_article, outfile, indent=4)
+            count=count+1
+        except:
+            print('parse error')
+
+        '''   
         upload_article_url = apple_news_url + '/channels/'+channel_id+ '/articles'
         r = requests.put(upload_article_url, json=article)
         '''

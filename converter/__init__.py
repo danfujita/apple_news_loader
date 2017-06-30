@@ -13,9 +13,9 @@ def convert(json_string):
         article['title'] = title(data)
         article['subtitle'] = data['deck']
         article['components'] = createComponents(data)
+        return json.dumps(article)
     except:
-        print('parse error')
-    return json.dumps(article);
+        print('error')
 
 def title(data):
     if 'display_headline' in data and data['display_headline'] != "":
