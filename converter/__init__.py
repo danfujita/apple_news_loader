@@ -12,7 +12,7 @@ def convert(json_string):
         article['title'] = title(data)
         article['subtitle'] = data['deck']
         article['components'] = createComponents(data)
-        return json.dumps(article)
+        return article
     except:
         print('error')
 
