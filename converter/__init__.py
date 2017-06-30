@@ -1,6 +1,5 @@
 import json
 import copy
-from pprint import pprint
 
 with open('converter/base.json') as base_file:
     article_base = json.load(base_file)
