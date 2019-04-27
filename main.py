@@ -1,5 +1,3 @@
-# from apscheduler.schedulers.blocking import BlockingScheduler
-# import requests
 import configparser
 from rss.load_articles import load_articles, get_articles
 from converter import convert
@@ -45,11 +43,6 @@ def convert_and_save(article_json):
     except:
         print('parse error')
 
-    '''
-    upload_article_url = apple_news_url + '/channels/'+channel_id+ '/articles'
-    r = requests.put(upload_article_url, json=article)
-    '''
-
 
 if __name__ == '__main__':
     # convert specific urls passed in as cli arguments
@@ -59,13 +52,3 @@ if __name__ == '__main__':
     # otherwise pull from rss feed
     else:
         load_from_feed()
-        '''
-        sched = BlockingScheduler(timezone='EST')
-        sched.add_job(
-            loader,
-            'interval',
-            id='loeader',
-            minutes=int(config['INTERVAL']['minutes'])
-        )
-        sched.start()
-        '''

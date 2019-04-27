@@ -4,6 +4,7 @@ import copy
 with open('converter/base.json') as base_file:
     article_base = json.load(base_file)
 
+
 def convert(json_string):
     data = json.loads(json_string)
     article = copy.deepcopy(article_base)
@@ -16,6 +17,7 @@ def convert(json_string):
     except:
         print('error')
 
+
 def title(data):
     if 'display_headline' in data and data['display_headline'] != "":
         return data['display_headline']
@@ -23,6 +25,7 @@ def title(data):
         return data['headline']
     elif 'short_headline' in data and data['short_headline'] != "":
         return data['short_headline']
+
 
 def createComponents(data):
     return [x for x in [
@@ -33,23 +36,26 @@ def createComponents(data):
         authorComponent(data),
     ] if x];
 
+
 # COMPONENTS
 
 def titleComponent(data):
     return {
-      'role': 'title',
-      'layout': 'titleLayout',
-      'text': title(data),
-      'textStyle': 'titleStyle',
+        'role': 'title',
+        'layout': 'titleLayout',
+        'text': title(data),
+        'textStyle': 'titleStyle',
     }
+
 
 def introComponent(data):
     return {
-      'role': 'intro',
-      'layout': 'introLayout',
-      'text': data['deck'],
-      'textStyle': 'introStyle'
+        'role': 'intro',
+        'layout': 'introLayout',
+        'text': data['deck'],
+        'textStyle': 'introStyle'
     }
+
 
 def headerComponent(data):
     if 'image' in data:
@@ -66,6 +72,7 @@ def headerComponent(data):
             }
         }
 
+
 def bodyComponent(data):
     content = ''.join([i for i in data['body'] if type(i) == str])
     return {
@@ -75,6 +82,7 @@ def bodyComponent(data):
         'layout': 'bodyLayout',
         'textStyle': 'bodyStyle',
     }
+
 
 def authorComponent(data):
     author = data['authors'][0];
