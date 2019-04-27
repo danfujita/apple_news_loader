@@ -1,8 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-import json
-import configparser
-
 
 def load_articles(url, username, password):
     r = get_article_lists(url, username, password)
